@@ -5,6 +5,8 @@
  */
 package lab3_douglasyjafef;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author famii
@@ -12,12 +14,11 @@ package lab3_douglasyjafef;
 public class Sedan extends Modelo{
     boolean AndroidPlay;
     boolean AndroidAuto;
-    String ADAS;
+    ArrayList <String> ADAS = new ArrayList();
 
-    public Sedan(boolean AndroidPlay, boolean AndroidAuto, String ADAS) {
+    public Sedan(boolean AndroidPlay, boolean AndroidAuto) {
         this.AndroidPlay = AndroidPlay;
         this.AndroidAuto = AndroidAuto;
-        this.ADAS = ADAS;
     }
 
     public Sedan() {
@@ -43,12 +44,14 @@ public class Sedan extends Modelo{
         this.AndroidAuto = AndroidAuto;
     }
 
-    public String getADAS() {
+    public ArrayList<String> getADAS() {
         return ADAS;
     }
 
-    public void setADAS(String ADAS) {
+    public void setADAS(ArrayList<String> ADAS) {
         this.ADAS = ADAS;
     }
     
+
+        
 }
