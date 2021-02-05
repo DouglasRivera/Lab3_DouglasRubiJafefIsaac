@@ -76,5 +76,10 @@ public class Modelo {
     public void setTecnologias(String Tecnologias) {
         this.Tecnologias = Tecnologias;
     }
+
+    @Override
+    public String toString() {
+        return "Modelo{" + "Nombre=" + Nombre + ", yearFabricacion=" + yearFabricacion + ", TipoMotor=" + TipoMotor + ", CilindradaMotor=" + CilindradaMotor + ", Precio=" + Precio + ", Tecnologias=" + Tecnologias + '}';
+    }
     
 }

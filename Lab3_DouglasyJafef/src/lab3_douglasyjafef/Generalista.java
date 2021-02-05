@@ -30,6 +30,11 @@ public class Generalista extends Marca{
     public void setTipo(String Tipo) {
         this.Tipo = Tipo;
     }
+
+    @Override
+    public String toString() {
+        return "Generalista{" + "Tipo=" + Tipo + '}';
+    }
     
     
 }

@@ -86,5 +86,10 @@ public class Fabricas {
     public void setCantidadAutos(int CantidadAutos) {
         this.CantidadAutos = CantidadAutos;
     }
+
+    @Override
+    public String toString() {
+        return "Fabricas{" + "Nombre=" + Nombre + ", Ubicacion=" + Ubicacion + ", MaxModelos=" + MaxModelos + ", TipoCarroceria=" + TipoCarroceria + ", CantidadEmpleados=" + CantidadEmpleados + ", NombreMarca=" + NombreMarca + ", CantidadAutos=" + CantidadAutos + '}';
+    }
     
 }

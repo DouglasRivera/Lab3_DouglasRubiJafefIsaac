@@ -50,5 +50,10 @@ public class Hatchback extends Modelo{
     public void setCantidadBolsasAire(int CantidadBolsasAire) {
         this.CantidadBolsasAire = CantidadBolsasAire;
     }
+
+    @Override
+    public String toString() {
+        return "Hatchback{" + "Capacidad=" + Capacidad + ", TotalLongitd=" + TotalLongitd + ", CantidadBolsasAire=" + CantidadBolsasAire + '}';
+    }
     
 }

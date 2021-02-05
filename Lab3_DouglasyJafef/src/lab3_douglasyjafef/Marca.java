@@ -107,5 +107,10 @@ public class Marca {
     public void setModelo(ArrayList<Modelo> Modelo) {
         this.Modelo = Modelo;
     }
+
+    @Override
+    public String toString() {
+        return "Marca{" + "Nombre=" + Nombre + ", Slogan=" + Slogan + ", yearFundacion=" + yearFundacion + ", yearIntegracion=" + yearIntegracion + ", Fundador=" + Fundador + ", TotalVentas=" + TotalVentas + ", Presidente=" + Presidente + ", NumeroModelos=" + NumeroModelos + ", Modelo=" + Modelo + '}';
+    }
     
 }

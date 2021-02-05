@@ -51,6 +51,11 @@ public class Sedan extends Modelo{
     public void setADAS(ArrayList<String> ADAS) {
         this.ADAS = ADAS;
     }
+
+    @Override
+    public String toString() {
+        return "Sedan{" + "AndroidPlay=" + AndroidPlay + ", AndroidAuto=" + AndroidAuto + ", ADAS=" + ADAS + '}';
+    }
     
 
         

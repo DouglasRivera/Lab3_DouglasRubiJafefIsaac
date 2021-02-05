@@ -56,5 +56,10 @@ public class DivisionesTecnologicas {
     public void setTecnologias(String Tecnologias) {
         this.Tecnologias = Tecnologias;
     }
+
+    @Override
+    public String toString() {
+        return "DivisionesTecnologicas{" + "Nombre=" + Nombre + ", yearCreacion=" + yearCreacion + ", CampoDedicacion=" + CampoDedicacion + ", Tecnologias=" + Tecnologias + '}';
+    }
     
 }

@@ -5,6 +5,7 @@
  */
 package lab3_douglasyjafef;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,6 +19,7 @@ public class Lab3_DouglasyJafef {
      */
     public static void main(String[] args) {
         int opcion=0;
+        ArrayList lista = new ArrayList();
         while(opcion!=7){
             opcion=Integer.parseInt(JOptionPane.showInputDialog("1. Corporaciones\n" +
                     "2. Marcas\n" +
@@ -31,13 +33,24 @@ public class Lab3_DouglasyJafef {
                     int op = Integer.parseInt(JOptionPane.showInputDialog("Que desea hacer?\n 1. Crear\n 2. Listar\n 3.Modificar\n 4. Eliminar"));
                     switch(op){
                         case 1:{
-                            
+                            String nombre = JOptionPane.showInputDialog("Ingrese nombre");
+                            String Sede = JOptionPane.showInputDialog("Ingrese nombre");
+                            int año = Integer.parseInt(JOptionPane.showInputDialog("Ingrese nombre"));
+                            String presi = JOptionPane.showInputDialog("Ingrese nombre");
+                            int empleados = Integer.parseInt(JOptionPane.showInputDialog("Ingrese nombre"));
+                            int autos = Integer.parseInt(JOptionPane.showInputDialog("Ingrese nombre"));
+                            lista.add(new Corporaciones(nombre, Sede, año, presi, empleados, autos));
                             break;}
                         case 2:{
-                            
+                            JOptionPane.showMessageDialog(null, lista);
                             break;}
                         case 3:{
-                            
+                            int pos = Integer.parseInt(JOptionPane.showInputDialog("Ingrsese posición a modificar"));
+                            if(lista.get(pos) instanceof Corporaciones){
+                                int mod =Integer.parseInt(JOptionPane.showInputDialog("Ingrsese posición a modificar"));
+                            }else {
+                                JOptionPane.showMessageDialog(null, "Posición no válida");
+                            }
                             break;}
                         case 4:{
                             

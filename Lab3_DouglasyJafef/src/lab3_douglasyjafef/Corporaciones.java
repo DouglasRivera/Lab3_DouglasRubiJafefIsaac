@@ -97,5 +97,10 @@ public class Corporaciones {
     public void setFabricas(ArrayList<Fabricas> Fabricas) {
         this.Fabricas = Fabricas;
     }
+
+    @Override
+    public String toString() {
+        return "Corporaciones{" + "Nombre=" + Nombre + ", Sede=" + Sede + ", yearFundacion=" + yearFundacion + ", Presidente=" + Presidente + ", NumEmpleados=" + NumEmpleados + ", Cantidad_Autos=" + Cantidad_Autos + ", Marca=" + Marca + ", Fabricas=" + Fabricas + ", DivisionesTecnologicas=" + DivisionesTecnologicas + '}';
+    }
     
 }

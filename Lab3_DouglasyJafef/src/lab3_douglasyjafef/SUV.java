@@ -50,5 +50,10 @@ public class SUV extends Modelo {
     public void setNombreNavegador(String NombreNavegador) {
         this.NombreNavegador = NombreNavegador;
     }
+
+    @Override
+    public String toString() {
+        return "SUV{" + "Modelo4X4=" + Modelo4X4 + ", CantidadPasajero=" + CantidadPasajero + ", NombreNavegador=" + NombreNavegador + '}';
+    }
     
 }

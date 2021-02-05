@@ -50,5 +50,10 @@ public class Premiun extends Marca{
     public void setTipoCarroceria(String TipoCarroceria) {
         this.TipoCarroceria = TipoCarroceria;
     }
+
+    @Override
+    public String toString() {
+        return "Premiun{" + "DivisionDeportiva=" + DivisionDeportiva + ", DivisionDelujo=" + DivisionDelujo + ", TipoCarroceria=" + TipoCarroceria + '}';
+    }
     
 }
