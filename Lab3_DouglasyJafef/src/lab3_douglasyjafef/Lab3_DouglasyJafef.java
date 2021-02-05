@@ -19,6 +19,7 @@ public class Lab3_DouglasyJafef {
      */
     public static void main(String[] args) {
         int opcion=0;
+        ArrayList <Corporaciones> corporaciones = new ArrayList();
         ArrayList lista = new ArrayList();
         Corporaciones c = new Corporaciones();
         while(opcion!=7){
@@ -91,6 +92,7 @@ public class Lab3_DouglasyJafef {
                     break;
                 }
                 case 2:{
+                    if(corporaciones.size()==0) break;
                     int op = Integer.parseInt(JOptionPane.showInputDialog("Que desea hacer?\n 1. Crear\n 2. Listar\n 3.Modificar\n 4. Eliminar"));
                     switch(op){
                         case 1:{
@@ -111,7 +113,7 @@ public class Lab3_DouglasyJafef {
                                 String Presidente=JOptionPane.showInputDialog("Ingrese nombre del presidente de la marca");
                                 int NumeroModelos=Integer.parseInt(JOptionPane.showInputDialog("Ingrese número de modelos que tiene la marca"));
                                 new Marca(Nombre, Slogan, yearFundacion, yearIntegracion, Fundador, TotalVentas, Presidente, NumeroModelos);
-                                ((Corporaciones).lista.get(pos)).getMarca().add(new Marca(Nombre, Slogan, yearFundacion, yearIntegracion, Fundador, TotalVentas, Presidente, NumeroModelos));
+                               // ((Corporaciones).lista.get(pos)).getMarca().add(new Marca(Nombre, Slogan, yearFundacion, yearIntegracion, Fundador, TotalVentas, Presidente, NumeroModelos));
                             }else{
                                 JOptionPane.showMessageDialog(null,"No hay Corporación en esa posición");
                             }
@@ -135,16 +137,79 @@ public class Lab3_DouglasyJafef {
                     break;
                 }
                 case 3:{
+                    if(corporaciones.size()==0) break;
                     int op = Integer.parseInt(JOptionPane.showInputDialog("Que desea hacer?\n 1. Crear\n 2. Listar\n 3.Modificar\n 4. Eliminar"));
                     switch(op){
                         case 1:{
-                            
+                             String listaCorporaciones = "Ingresa el indice de una de las siguientes corporaciones\n";
+                            for (int i = 0; i < corporaciones.size(); i++) {
+                                listaCorporaciones+=i+". "+corporaciones.get(i).getNombre()+"\n";
+                            }
+                            int posicionCorporacion = Integer.parseInt(JOptionPane.showInputDialog(listaCorporaciones));
+                            if(corporaciones.get(posicionCorporacion).getMarca().size()==0) break;
+                            String listaMarcas = "Ingresa el indice de una de las siguientes fabricas\n";
+                            for (int i = 0; i < corporaciones.get(posicionCorporacion).getMarca().size(); i++) {
+                                listaMarcas+=i+". "+corporaciones.get(posicionCorporacion).getMarca().get(i).getNombre()+"\n";
+                            }
+                            int posicionMarcas = Integer.parseInt(JOptionPane.showInputDialog(listaMarcas));
+                            String Nombre=JOptionPane.showInputDialog("Ingrese nombre del modelo");
+                            int yearFabricacion=Integer.parseInt(JOptionPane.showInputDialog("Ingrese cantidad de modelos"));
+                            String TipoMotor=JOptionPane.showInputDialog("Ingrese el tipo de motor");
+                            int Cilindrada=Integer.parseInt(JOptionPane.showInputDialog("Ingrese cantidad de centimetros cubicos del motor"));
+                            int precio=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el precio"));
+                            String Tecno=JOptionPane.showInputDialog("Ingrese el tipo de tecnologia que tiene");
+                            corporaciones.get(posicionCorporacion).getMarca().get(posicionMarcas).getModelo().add(new Modelo(Nombre, yearFabricacion,TipoMotor,Cilindrada,precio,Tecno));
                             break;}
                         case 2:{
+                            String listaCorporaciones = "Ingresa el indice de una de las siguientes corporaciones\n";
+                            for (int i = 0; i < corporaciones.size(); i++) {
+                                listaCorporaciones+=i+". "+corporaciones.get(i).getNombre()+"\n";
+                            }
+                            int posicionCorporacion = Integer.parseInt(JOptionPane.showInputDialog(listaCorporaciones));
+                            if(corporaciones.get(posicionCorporacion).getMarca().size()==0) break;
+                            String listaMarcas = "Ingresa el indice de una de las siguientes fabricas\n";
+                            for (int i = 0; i < corporaciones.get(posicionCorporacion).getMarca().size(); i++) {
+                                listaMarcas+=i+". "+corporaciones.get(posicionCorporacion).getMarca().get(i).getNombre()+"\n";
+                            }
+                            int posicionMarca = Integer.parseInt(JOptionPane.showInputDialog(listaCorporaciones));
+                              String listaModelo = "Ingresa el indice de una de las siguientes modelos\n";
+                            for (int i = 0; i < corporaciones.get(posicionCorporacion).getMarca().get(posicionMarca).getModelo().size(); i++) {
+                                listaModelo+=i+". "+corporaciones.get(posicionCorporacion).getMarca().get(posicionMarca).getModelo().get(i).getNombre()+"\n";
+                            }
+                            int posicionModelo = Integer.parseInt(JOptionPane.showInputDialog(listaModelo));
+                            Modelo Md =corporaciones.get(posicionCorporacion).getMarca().get(posicionMarca).getModelo().get(posicionModelo);
+                            String Nombre=JOptionPane.showInputDialog("Ingrese nombre del modelo");
+                            int yearFabricacion=Integer.parseInt(JOptionPane.showInputDialog("Ingrese cantidad de modelos"));
+                            String TipoMotor=JOptionPane.showInputDialog("Ingrese el tipo de motor");
+                            int Cilindrada=Integer.parseInt(JOptionPane.showInputDialog("Ingrese cantidad de centimetros cubicos del motor"));
+                            int precio=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el precio"));
+                            String Tecno=JOptionPane.showInputDialog("Ingrese el tipo de tecnologia que tiene");
                             
+                            Md.setCilindradaMotor(Cilindrada);
+                            Md.setNombre(Nombre);
+                            Md.setPrecio(precio);
+                            Md.setTecnologias(Tecno);
+                            Md.setTipoMotor(TipoMotor);
+                            Md.setYearFabricacion(yearFabricacion);
                             break;}
                         case 3:{
-                            
+                            String listaCorporaciones = "Ingresa el indice de una de las siguientes corporaciones\n";
+                            for (int i = 0; i < corporaciones.size(); i++) {
+                                listaCorporaciones+=i+". "+corporaciones.get(i).getNombre()+"\n";
+                            }
+                            int posicionCorporacion = Integer.parseInt(JOptionPane.showInputDialog(listaCorporaciones));
+                            if(corporaciones.get(posicionCorporacion).getMarca().size()==0) break;
+                            String listaMarcas = "Ingresa el indice de una de las siguientes fabricas\n";
+                            for (int i = 0; i < corporaciones.get(posicionCorporacion).getMarca().size(); i++) {
+                                listaMarcas+=i+". "+corporaciones.get(posicionCorporacion).getMarca().get(i).getNombre()+"\n";
+                            }
+                            int posicionMarca = Integer.parseInt(JOptionPane.showInputDialog(listaCorporaciones));
+                              String listaModelo = "Ingresa el indice de una de las siguientes modelos\n";
+                            for (int i = 0; i < corporaciones.get(posicionCorporacion).getMarca().get(posicionMarca).getModelo().size(); i++) {
+                                listaModelo+=i+". "+corporaciones.get(posicionCorporacion).getMarca().get(posicionMarca).getModelo().get(i).getNombre()+"\n";
+                            }
+                            int posicionModelo = Integer.parseInt(JOptionPane.showInputDialog(listaModelo));
+                            corporaciones.get(posicionCorporacion).getMarca().get(posicionMarca).getModelo().remove(posicionModelo);
                             break;}
                         case 4:{
                             
@@ -153,16 +218,64 @@ public class Lab3_DouglasyJafef {
                     break;
                 }
                 case 4:{
+                     if(corporaciones.size()==0) break;
                     int op = Integer.parseInt(JOptionPane.showInputDialog("Que desea hacer?\n 1. Crear\n 2. Listar\n 3.Modificar\n 4. Eliminar\n 5. Agregar modelo"));
                     switch(op){
                         case 1:{
                             
+                            String Nombre=JOptionPane.showInputDialog("Ingrese nombre de la fabrica");
+                            String Ubicacion=JOptionPane.showInputDialog("Ingrese la ubicacion");
+                            int MaxModelos=Integer.parseInt(JOptionPane.showInputDialog("Ingrese cantidad de modelos"));
+                            String TipoCarroceria=JOptionPane.showInputDialog("Ingrese lel tipo de carroceria");
+                            int CantidadEmpleados=Integer.parseInt(JOptionPane.showInputDialog("Ingrese cantidad de modelos"));
+                            String NombreMarca=JOptionPane.showInputDialog("Ingrese el nombre de la marca");
+                            int CantidadAutos=Integer.parseInt(JOptionPane.showInputDialog("Ingrese cantidad de autos"));
+                            String listaCorporaciones = "Ingresa el indice de una de las siguientes corporaciones\n";
+                            for (int i = 0; i < corporaciones.size(); i++) {
+                                listaCorporaciones+=i+". "+corporaciones.get(i).getNombre()+"\n";
+                            }
+                            int posicionCorporacion = Integer.parseInt(JOptionPane.showInputDialog(listaCorporaciones));
+                            corporaciones.get(posicionCorporacion).getFabricas().add(new Fabricas(Nombre, Ubicacion, MaxModelos,TipoCarroceria,CantidadEmpleados,NombreMarca,CantidadAutos));
                             break;}
                         case 2:{
-                            
+                            String listaCorporaciones = "Ingresa el indice de una de las siguientes corporaciones\n";
+                            for (int i = 0; i < corporaciones.size(); i++) {
+                                listaCorporaciones+=i+". "+corporaciones.get(i).getNombre()+"\n";
+                            }
+                            int posicionCorporacion = Integer.parseInt(JOptionPane.showInputDialog(listaCorporaciones));
+                            String ListaFabricas = "Ingresa el indice de una de las siguientes fabricas\n";
+                            for (int i = 0; i < corporaciones.get(posicionCorporacion).getFabricas().size(); i++) {
+                                ListaFabricas+=i+". "+corporaciones.get(posicionCorporacion).getFabricas().get(i).getNombre()+"\n";
+                            }
+                             int posicionFabrica = Integer.parseInt(JOptionPane.showInputDialog(ListaFabricas));
+                            String Nombre=JOptionPane.showInputDialog("Ingrese nombre de la marca");
+                            String Ubicacion=JOptionPane.showInputDialog("Ingrese la ubicacion");
+                            int MaxModelos=Integer.parseInt(JOptionPane.showInputDialog("Ingrese cantidad de modelos"));
+                            String TipoCarroceria=JOptionPane.showInputDialog("Ingrese lel tipo de carroceria");
+                            int CantidadEmpleados=Integer.parseInt(JOptionPane.showInputDialog("Ingrese cantidad de modelos"));
+                            String NombreMarca=JOptionPane.showInputDialog("Ingrese el nombre de la marca");
+                            int CantidadAutos=Integer.parseInt(JOptionPane.showInputDialog("Ingrese cantidad de autos"));
+                            Fabricas Fb = corporaciones.get(posicionCorporacion).getFabricas().get(posicionFabrica);
+                            Fb.setCantidadAutos(CantidadAutos);
+                            Fb.setCantidadEmpleados(CantidadEmpleados);
+                            Fb.setMaxModelos(MaxModelos);
+                            Fb.setNombre(Nombre);
+                            Fb.setNombreMarca(NombreMarca);
+                            Fb.setTipoCarroceria(TipoCarroceria);
+                            Fb.setUbicacion(Ubicacion);
                             break;}
-                        case 3:{
-                            
+                        case 3:{ 
+                            String listaCorporaciones = "Ingresa el indice de una de las siguientes corporaciones\n";
+                            for (int i = 0; i < corporaciones.size(); i++) {
+                                listaCorporaciones+=i+". "+corporaciones.get(i).getNombre()+"\n";
+                            }
+                            int posicionCorporacion = Integer.parseInt(JOptionPane.showInputDialog(listaCorporaciones));
+                            String ListaFabricas = "Ingresa el indice de una de las siguientes fabricas\n";
+                            for (int i = 0; i < corporaciones.get(posicionCorporacion).getFabricas().size(); i++) {
+                                ListaFabricas+=i+". "+corporaciones.get(posicionCorporacion).getFabricas().get(i).getNombre()+"\n";
+                            }
+                            int posicionFabrica = Integer.parseInt(JOptionPane.showInputDialog(ListaFabricas));
+                            corporaciones.get(posicionCorporacion).getFabricas().remove(posicionFabrica);
                             break;}
                         case 4:{
                             
