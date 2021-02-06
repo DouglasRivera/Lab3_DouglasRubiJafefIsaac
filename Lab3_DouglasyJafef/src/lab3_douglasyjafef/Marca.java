@@ -110,7 +110,7 @@ public class Marca {
 
     @Override
     public String toString() {
-        return "Marca{" + "Nombre=" + Nombre + ", Slogan=" + Slogan + ", yearFundacion=" + yearFundacion + ", yearIntegracion=" + yearIntegracion + ", Fundador=" + Fundador + ", TotalVentas=" + TotalVentas + ", Presidente=" + Presidente + ", NumeroModelos=" + NumeroModelos + ", Modelo=" + Modelo + '}';
+        return "Marca{" + "Nombre de marca=" + Nombre + ", Slogan de marca=" + Slogan + ", Año de fundación de la marca=" + yearFundacion + ", Año de integración a la corporación=" + yearIntegracion + ", Fundador de la marca=" + Fundador + ", Total de ventas de la marca=" + TotalVentas + ", Presidente de la marca=" + Presidente + ", Numero de modelos en la marca=" + NumeroModelos + Modelo;
     }
     
 }

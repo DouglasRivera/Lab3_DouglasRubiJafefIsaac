@@ -89,7 +89,7 @@ public class Fabricas {
 
     @Override
     public String toString() {
-        return "Fabricas{" + "Nombre=" + Nombre + ", Ubicacion=" + Ubicacion + ", MaxModelos=" + MaxModelos + ", TipoCarroceria=" + TipoCarroceria + ", CantidadEmpleados=" + CantidadEmpleados + ", NombreMarca=" + NombreMarca + ", CantidadAutos=" + CantidadAutos + '}';
+        return "Nombre de fábrica=" + Nombre + ", Ubicacion de fábrica=" + Ubicacion + ", Cantidad máxima de modelos que se pueden crear=" + MaxModelos + ", Tipo de carrocería=" + TipoCarroceria + ", Cantidad de empleados=" + CantidadEmpleados + ", Nombre de Marca=" + NombreMarca + ", Cantida de autos en la fábrica=" + CantidadAutos;
     }
     
 }

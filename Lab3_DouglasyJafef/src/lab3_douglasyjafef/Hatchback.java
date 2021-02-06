@@ -53,7 +53,7 @@ public class Hatchback extends Modelo{
 
     @Override
     public String toString() {
-        return "Hatchback{" + "Capacidad=" + Capacidad + ", TotalLongitd=" + TotalLongitd + ", CantidadBolsasAire=" + CantidadBolsasAire + '}';
+        return "Hatchback:" + "Capacidad de maletero=" + Capacidad + ", Total de longitd=" + TotalLongitd + ", Cantidad de bolsas de aire=" + CantidadBolsasAire;
     }
     
 }

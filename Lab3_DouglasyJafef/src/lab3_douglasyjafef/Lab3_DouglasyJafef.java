@@ -59,21 +59,27 @@ public class Lab3_DouglasyJafef {
                                 switch(mod){
                                     case 1:{
                                         String nombre=JOptionPane.showInputDialog("Ingrsese nuevo nombre");
+                                        ( (Corporaciones)lista.get(pos) ).setNombre(nombre);
                                         break;}
                                     case 2:{
                                         String sede=JOptionPane.showInputDialog("Ingrsese nueva sede");
+                                        ( (Corporaciones)lista.get(pos) ).setSede(sede);
                                         break;}
                                     case 3:{
                                         int año=Integer.parseInt(JOptionPane.showInputDialog("Ingrsese nuevo año de fundación"));
+                                        ( (Corporaciones)lista.get(pos) ).setYearFundacion(año);
                                         break;}
                                     case 4:{
                                         String presi=JOptionPane.showInputDialog("Ingrsese nuevo nombre de presidente");
+                                        ( (Corporaciones)lista.get(pos) ).setPresidente(presi);
                                         break;}
                                     case 5:{
                                         int empleados=Integer.parseInt(JOptionPane.showInputDialog("Ingrsese nueva cantidad de empleados"));
+                                        ( (Corporaciones)lista.get(pos) ).setNumEmpleados(empleados);
                                         break;}
                                     case 6:{
                                         int autos=Integer.parseInt(JOptionPane.showInputDialog("Ingrsese nuevo número de autos"));
+                                        ( (Corporaciones)lista.get(pos) ).setCantidad_Autos(autos);
                                         break;}
                                 }
                             }else {
@@ -92,8 +98,8 @@ public class Lab3_DouglasyJafef {
                     break;
                 }
                 case 2:{
-                    if(corporaciones.size()==0) break;
-                    int op = Integer.parseInt(JOptionPane.showInputDialog("Que desea hacer?\n 1. Crear\n 2. Listar\n 3.Modificar\n 4. Eliminar"));
+                    if(corporaciones.size()==0){ break;}
+                    int op = Integer.parseInt(JOptionPane.showInputDialog("Que desea hacer?\n 1. Crear\n 2. Modificar\n 3. Eliminar\n 4. Listar"));
                     switch(op){
                         case 1:{
                             String salida ="";
@@ -161,14 +167,20 @@ public class Lab3_DouglasyJafef {
                             corporaciones.get(posicionCorporacion).getMarca().remove(posicionMarcas);
                             break;}
                         case 4:{
-                            
+                            String salida ="";
+                            for (Object t : lista) {
+                                if (t instanceof Marca) {
+                                    salida += lista.indexOf(t)+"- "+t+"\n";
+                                }
+                            }
+                            JOptionPane.showMessageDialog(null, salida);
                             break;}
                     }
                     break;
                 }
                 case 3:{
                     if(corporaciones.size()==0) break;
-                    int op = Integer.parseInt(JOptionPane.showInputDialog("Que desea hacer?\n 1. Crear\n 2. Listar\n 3.Modificar\n 4. Eliminar"));
+                    int op = Integer.parseInt(JOptionPane.showInputDialog("Que desea hacer?\n 1. Crear\n 2. Modificar\n 3.Eliminar\n 4. Listar"));
                     switch(op){
                         case 1:{
                              String listaCorporaciones = "Ingresa el indice de una de las siguientes corporaciones\n";
@@ -242,7 +254,13 @@ public class Lab3_DouglasyJafef {
                             corporaciones.get(posicionCorporacion).getMarca().get(posicionMarca).getModelo().remove(posicionModelo);
                             break;}
                         case 4:{
-                            
+                            String salida ="";
+                            for (Object t : lista) {
+                                if (t instanceof Modelo) {
+                                    salida += lista.indexOf(t)+"- "+t+"\n";
+                                }
+                            }
+                            JOptionPane.showMessageDialog(null, salida);
                             break;}
                     }
                     break;
@@ -308,13 +326,19 @@ public class Lab3_DouglasyJafef {
                             corporaciones.get(posicionCorporacion).getFabricas().remove(posicionFabrica);
                             break;}
                         case 4:{
-                            
+                            String salida ="";
+                            for (Object t : lista) {
+                                if (t instanceof Fabricas) {
+                                    salida += lista.indexOf(t)+"- "+t+"\n";
+                                }
+                            }
+                            JOptionPane.showMessageDialog(null, salida);
                             break;}
                     }
                     break;
                 }
                 case 5:{
-                    int op = Integer.parseInt(JOptionPane.showInputDialog("Que desea hacer?\n 1. Crear\n 2. Listar\n 3.Modificar\n 4. Eliminar\n 5. Asignar vehiculo"));
+                    int op = Integer.parseInt(JOptionPane.showInputDialog("Que desea hacer?\n 1. Crear\n 2. Modificar\n 3.Eliminar\n 4. Listar"));
                     switch(op){
                         case 1:{
                             String Nombre=JOptionPane.showInputDialog("Ingrese nombre de la fabrica");
@@ -363,16 +387,23 @@ public class Lab3_DouglasyJafef {
                             corporaciones.get(posicionCorporacion).getDivisionesTecnologicas().remove(posicionDivision);
                             break;}
                         case 4:{
-                            
-                            break;}
-                        case 5:{
-                            
+                            String salida ="";
+                            for (Object t : lista) {
+                                if (t instanceof DivisionesTecnologicas) {
+                                    salida += lista.indexOf(t)+"- "+t+"\n";
+                                }
+                            }
+                            JOptionPane.showMessageDialog(null, salida);
                             break;}
                     }
                     break;
                 }
                 case 6:{
-                    JOptionPane.showMessageDialog(null, "");
+                    String salida ="";
+                    for (Object t : lista) {
+                        salida += lista.indexOf(t)+"- "+t+"\n";
+                    }
+                    JOptionPane.showMessageDialog(null, salida);
                     break;
                 }
             }   

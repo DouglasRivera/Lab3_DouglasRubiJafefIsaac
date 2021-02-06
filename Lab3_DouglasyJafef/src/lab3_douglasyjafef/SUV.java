@@ -53,7 +53,7 @@ public class SUV extends Modelo {
 
     @Override
     public String toString() {
-        return "SUV{" + "Modelo4X4=" + Modelo4X4 + ", CantidadPasajero=" + CantidadPasajero + ", NombreNavegador=" + NombreNavegador + '}';
+        return "SUV:" + "Modelo 4X4=" + Modelo4X4 + ", Cantidad máxima de pasajero=" + CantidadPasajero + ", Nombre del navegador=" + NombreNavegador;
     }
     
 }

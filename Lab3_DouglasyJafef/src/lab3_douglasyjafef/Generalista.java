@@ -33,7 +33,7 @@ public class Generalista extends Marca{
 
     @Override
     public String toString() {
-        return "Generalista{" + "Tipo=" + Tipo + '}';
+        return "Tipo de marca=" + Tipo;
     }
     
     

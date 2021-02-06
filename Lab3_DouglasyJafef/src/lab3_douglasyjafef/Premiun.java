@@ -53,7 +53,7 @@ public class Premiun extends Marca{
 
     @Override
     public String toString() {
-        return "Premiun{" + "DivisionDeportiva=" + DivisionDeportiva + ", DivisionDelujo=" + DivisionDelujo + ", TipoCarroceria=" + TipoCarroceria + '}';
+        return "División deportiva=" + DivisionDeportiva + ", Division de lujo=" + DivisionDelujo + ", Tipo de carroceria=" + TipoCarroceria;
     }
     
 }

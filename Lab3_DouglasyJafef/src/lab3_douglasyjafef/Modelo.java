@@ -79,7 +79,7 @@ public class Modelo {
 
     @Override
     public String toString() {
-        return "Modelo{" + "Nombre=" + Nombre + ", yearFabricacion=" + yearFabricacion + ", TipoMotor=" + TipoMotor + ", CilindradaMotor=" + CilindradaMotor + ", Precio=" + Precio + ", Tecnologias=" + Tecnologias + '}';
+        return  "Nombre de modelo=" + Nombre + ", Año de fabricación=" + yearFabricacion + ", Tipo de motor=" + TipoMotor + ", Cilindrada del motor=" + CilindradaMotor + ", Precio del modelo=" + Precio + ", Tecnologias en el modelo=" + Tecnologias ;
     }
     
 }

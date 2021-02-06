@@ -108,7 +108,7 @@ public class Corporaciones {
 
     @Override
     public String toString() {
-        return "Corporaciones{" + "Nombre=" + Nombre + ", Sede=" + Sede + ", yearFundacion=" + yearFundacion + ", Presidente=" + Presidente + ", NumEmpleados=" + NumEmpleados + ", Cantidad_Autos=" + Cantidad_Autos + ", Marca=" + Marca + ", Fabricas=" + Fabricas + ", DivisionesTecnologicas=" + DivisionesTecnologicas + '}';
+        return "Nombre de Corporación=" + Nombre + ", Lugar de Sede=" + Sede + ", Año de fundación=" + yearFundacion + ", Presidente/CEO de Corporación=" + Presidente + ", Número de empleados=" + NumEmpleados + ", Cantidad de Autos=" + Cantidad_Autos + ", Marca=" + Marca + ", Fabricas=" + Fabricas + ", DivisionesTecnologicas=" + DivisionesTecnologicas;
     }
     
 }

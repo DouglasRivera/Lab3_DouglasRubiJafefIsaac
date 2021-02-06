@@ -54,7 +54,7 @@ public class Sedan extends Modelo{
 
     @Override
     public String toString() {
-        return "Sedan{" + "AndroidPlay=" + AndroidPlay + ", AndroidAuto=" + AndroidAuto + ", ADAS=" + ADAS + '}';
+        return "Sedan:" + "AndroidPlay=" + AndroidPlay + ", AndroidAuto=" + AndroidAuto + ", Asistentes de conducción=" + ADAS + '}';
     }
     
 

@@ -59,7 +59,7 @@ public class DivisionesTecnologicas {
 
     @Override
     public String toString() {
-        return "DivisionesTecnologicas{" + "Nombre=" + Nombre + ", yearCreacion=" + yearCreacion + ", CampoDedicacion=" + CampoDedicacion + ", Tecnologias=" + Tecnologias + '}';
+        return "Nombre de División Tecnológica=" + Nombre + ", Año de creación=" + yearCreacion + ", Campo de dedicación=" + CampoDedicacion + ", Tecnologías=" + Tecnologias ;
     }
     
 }
