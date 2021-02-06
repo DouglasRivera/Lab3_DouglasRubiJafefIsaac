@@ -97,13 +97,13 @@ public class Lab3_DouglasyJafef {
                     switch(op){
                         case 1:{
                             String salida ="";
-                            for (Object t : lista) {
+                            for (Corporaciones t : corporaciones) {
                                 if (t instanceof Corporaciones) {
-                                    salida += lista.indexOf(t)+"- "+t+"\n";
+                                    salida += corporaciones.indexOf(t)+"- "+t+"\n";
                                 }
                             }
                             int pos = Integer.parseInt(JOptionPane.showInputDialog(salida+"Ingrese que la posición de la corperación a la cual le desea añadir una marca"));
-                            if(lista.get(pos) instanceof Corporaciones){
+                            if(corporaciones.get(pos) instanceof Corporaciones){
                                 String Nombre=JOptionPane.showInputDialog("Ingrese nombre de la marca");
                                 String Slogan=JOptionPane.showInputDialog("Ingrese slogan de la marca");
                                 int yearFundacion=Integer.parseInt(JOptionPane.showInputDialog("Ingrese año de fundación de la marca"));
@@ -112,23 +112,53 @@ public class Lab3_DouglasyJafef {
                                 int TotalVentas=Integer.parseInt(JOptionPane.showInputDialog("Ingrese total de ventas de la marca"));
                                 String Presidente=JOptionPane.showInputDialog("Ingrese nombre del presidente de la marca");
                                 int NumeroModelos=Integer.parseInt(JOptionPane.showInputDialog("Ingrese número de modelos que tiene la marca"));
-                                new Marca(Nombre, Slogan, yearFundacion, yearIntegracion, Fundador, TotalVentas, Presidente, NumeroModelos);
-                               // ((Corporaciones).lista.get(pos)).getMarca().add(new Marca(Nombre, Slogan, yearFundacion, yearIntegracion, Fundador, TotalVentas, Presidente, NumeroModelos));
+                               corporaciones.get(pos).getMarca().add(new Marca(Nombre,Slogan,yearFundacion,yearIntegracion,Fundador,TotalVentas,Presidente,NumeroModelos));
                             }else{
                                 JOptionPane.showMessageDialog(null,"No hay Corporación en esa posición");
                             }
                             break;}
                         case 2:{
-                            String salida ="";
-                            for (Object t : lista) {
-                                if (t instanceof Marca) {
-                                    salida += lista.indexOf(t)+"- "+t+"\n";
-                                }
+                           
+                            String listaCorporaciones = "Ingresa el indice de una de las siguientes corporaciones\n";
+                            for (int i = 0; i < corporaciones.size(); i++) {
+                                listaCorporaciones+=i+". "+corporaciones.get(i).getNombre()+"\n";
                             }
-                            JOptionPane.showMessageDialog(null, salida);
+                            int posicionCorporacion = Integer.parseInt(JOptionPane.showInputDialog(listaCorporaciones+"Ingrese que la posición de la corperación a la cual le desea añadir una marca"));
+                             String listaMarcas = "Ingresa el indice de una de las siguientes fabricas\n";
+                            for (int i = 0; i < corporaciones.get(posicionCorporacion).getMarca().size(); i++) {
+                                listaMarcas+=i+". "+corporaciones.get(posicionCorporacion).getMarca().get(i).getNombre()+"\n";
+                            }
+                            int posicionMarcas = Integer.parseInt(JOptionPane.showInputDialog(listaMarcas));
+                            Marca marca = corporaciones.get(posicionCorporacion).getMarca().get(posicionMarcas);
+                                String Nombre=JOptionPane.showInputDialog("Ingrese nombre de la marca");
+                                String Slogan=JOptionPane.showInputDialog("Ingrese slogan de la marca");
+                                int yearFundacion=Integer.parseInt(JOptionPane.showInputDialog("Ingrese año de fundación de la marca"));
+                                int yearIntegracion=Integer.parseInt(JOptionPane.showInputDialog("Ingrese año de integración a la copreoración de la marca"));
+                                String Fundador=JOptionPane.showInputDialog("Ingrese nombre del fundador");
+                                int TotalVentas=Integer.parseInt(JOptionPane.showInputDialog("Ingrese total de ventas de la marca"));
+                                String Presidente=JOptionPane.showInputDialog("Ingrese nombre del presidente de la marca");
+                                int NumeroModelos=Integer.parseInt(JOptionPane.showInputDialog("Ingrese número de modelos que tiene la marca"));
+                                marca.setFundador(Fundador);
+                                marca.setNombre(Nombre);
+                                marca.setNumeroModelos(NumeroModelos);
+                                marca.setPresidente(Presidente);
+                                marca.setSlogan(Slogan);
+                                marca.setTotalVentas(TotalVentas);
+                                marca.setYearFundacion(yearFundacion);
+                                marca.setYearIntegracion(yearIntegracion);
                             break;}
                         case 3:{
-                            
+                            String listaCorporaciones = "Ingresa el indice de una de las siguientes corporaciones\n";
+                            for (int i = 0; i < corporaciones.size(); i++) {
+                                listaCorporaciones+=i+". "+corporaciones.get(i).getNombre()+"\n";
+                            }
+                            int posicionCorporacion = Integer.parseInt(JOptionPane.showInputDialog(listaCorporaciones+"Ingrese que la posición de la corperación a la cual le desea añadir una marca"));
+                             String listaMarcas = "Ingresa el indice de una de las siguientes fabricas\n";
+                            for (int i = 0; i < corporaciones.get(posicionCorporacion).getMarca().size(); i++) {
+                                listaMarcas+=i+". "+corporaciones.get(posicionCorporacion).getMarca().get(i).getNombre()+"\n";
+                            }
+                            int posicionMarcas = Integer.parseInt(JOptionPane.showInputDialog(listaMarcas));
+                            corporaciones.get(posicionCorporacion).getMarca().remove(posicionMarcas);
                             break;}
                         case 4:{
                             
@@ -219,7 +249,7 @@ public class Lab3_DouglasyJafef {
                 }
                 case 4:{
                      if(corporaciones.size()==0) break;
-                    int op = Integer.parseInt(JOptionPane.showInputDialog("Que desea hacer?\n 1. Crear\n 2. Listar\n 3.Modificar\n 4. Eliminar\n 5. Agregar modelo"));
+                    int op = Integer.parseInt(JOptionPane.showInputDialog("Que desea hacer?\n 1. Crear\n 2. Listar\n 3.Modificar\n 4. Eliminar\n"));
                     switch(op){
                         case 1:{
                             
@@ -280,9 +310,6 @@ public class Lab3_DouglasyJafef {
                         case 4:{
                             
                             break;}
-                        case 5:{
-                            
-                            break;}
                     }
                     break;
                 }
@@ -290,13 +317,50 @@ public class Lab3_DouglasyJafef {
                     int op = Integer.parseInt(JOptionPane.showInputDialog("Que desea hacer?\n 1. Crear\n 2. Listar\n 3.Modificar\n 4. Eliminar\n 5. Asignar vehiculo"));
                     switch(op){
                         case 1:{
-                            
+                            String Nombre=JOptionPane.showInputDialog("Ingrese nombre de la fabrica");
+                            int yearCreacion=Integer.parseInt(JOptionPane.showInputDialog("Ingrese año de creacion"));
+                            String CampoDedicacion=JOptionPane.showInputDialog("Ingrese el campo de dedicacion");
+                            String Tecnologias=JOptionPane.showInputDialog("Ingrese la tecnologias");
+                            String listaCorporaciones = "Ingresa el indice de una de las siguientes corporaciones\n";
+                            for (int i = 0; i < corporaciones.size(); i++) {
+                                listaCorporaciones+=i+". "+corporaciones.get(i).getNombre()+"\n";
+                            }
+                            int posicionCorporacion = Integer.parseInt(JOptionPane.showInputDialog(listaCorporaciones));
+                            corporaciones.get(posicionCorporacion).getDivisionesTecnologicas().add(new DivisionesTecnologicas(Nombre, yearCreacion,CampoDedicacion,Tecnologias));
                             break;}
                         case 2:{
-                            
+                            String listaCorporaciones = "Ingresa el indice de una de las siguientes corporaciones\n";
+                            for (int i = 0; i < corporaciones.size(); i++) {
+                                listaCorporaciones+=i+". "+corporaciones.get(i).getNombre()+"\n";
+                            }
+                            String listaDivision = "Ingresa el indice de una de las siguientes Divisiones tecnologicas\n";
+                            for (int i = 0; i < corporaciones.size(); i++) {
+                                listaDivision+=i+". "+corporaciones.get(i).getNombre()+"\n";
+                            }
+                            int posicionCorporacion = Integer.parseInt(JOptionPane.showInputDialog(listaCorporaciones));
+                            int posicionDivision = Integer.parseInt(JOptionPane.showInputDialog(listaDivision));
+                            String Nombre=JOptionPane.showInputDialog("Ingrese nombre de la fabrica");
+                            int yearCreacion=Integer.parseInt(JOptionPane.showInputDialog("Ingrese año de creacion"));
+                            String CampoDedicacion=JOptionPane.showInputDialog("Ingrese el campo de dedicacion");
+                            String Tecnologias=JOptionPane.showInputDialog("Ingrese la tecnologias");
+                            DivisionesTecnologicas DT = corporaciones.get(posicionCorporacion).getDivisionesTecnologicas().get(posicionDivision);
+                            DT.setCampoDedicacion(CampoDedicacion);
+                            DT.setNombre(Nombre);
+                            DT.setTecnologias(Tecnologias);
+                            DT.setYearCreacion(yearCreacion);
                             break;}
                         case 3:{
-                            
+                            String listaCorporaciones = "Ingresa el indice de una de las siguientes corporaciones\n";
+                            for (int i = 0; i < corporaciones.size(); i++) {
+                                listaCorporaciones+=i+". "+corporaciones.get(i).getNombre()+"\n";
+                            }
+                            String listaDivision = "Ingresa el indice de una de las siguientes Divisiones tecnologicas\n";
+                            for (int i = 0; i < corporaciones.size(); i++) {
+                                listaDivision+=i+". "+corporaciones.get(i).getNombre()+"\n";
+                            }
+                            int posicionCorporacion = Integer.parseInt(JOptionPane.showInputDialog(listaCorporaciones));
+                            int posicionDivision = Integer.parseInt(JOptionPane.showInputDialog(listaDivision));
+                            corporaciones.get(posicionCorporacion).getDivisionesTecnologicas().remove(posicionDivision);
                             break;}
                         case 4:{
                             

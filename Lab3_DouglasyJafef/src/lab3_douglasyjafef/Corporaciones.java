@@ -98,6 +98,14 @@ public class Corporaciones {
         this.Fabricas = Fabricas;
     }
 
+    public ArrayList<DivisionesTecnologicas> getDivisionesTecnologicas() {
+        return DivisionesTecnologicas;
+    }
+
+    public void setDivisionesTecnologicas(ArrayList<DivisionesTecnologicas> DivisionesTecnologicas) {
+        this.DivisionesTecnologicas = DivisionesTecnologicas;
+    }
+
     @Override
     public String toString() {
         return "Corporaciones{" + "Nombre=" + Nombre + ", Sede=" + Sede + ", yearFundacion=" + yearFundacion + ", Presidente=" + Presidente + ", NumEmpleados=" + NumEmpleados + ", Cantidad_Autos=" + Cantidad_Autos + ", Marca=" + Marca + ", Fabricas=" + Fabricas + ", DivisionesTecnologicas=" + DivisionesTecnologicas + '}';
